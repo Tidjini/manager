@@ -6,7 +6,8 @@ const INITIAL_STATE = { email: "" };
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMAIL_CHANGED:
-      return { email: actions.payload };
+      //must always send a new object (comparaison oldState vs newState by redux)
+      return { ...state, email: action.payload };
     default:
       return state;
   }
