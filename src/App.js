@@ -4,7 +4,9 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import firebase from "firebase";
 
+//Libraries created
 import reducers from "./reducers";
+import LoginForm from "./components/LoginForm";
 
 export default class App extends Component {
   componentWillMount() {
@@ -23,9 +25,7 @@ export default class App extends Component {
     return (
       // NOTE: we should give to the Provider an instance of stores (Redux) to connect with all tags => createStore()
       <Provider store={createStore(reducers)}>
-        <View>
-          <Text>this is it</Text>
-        </View>
+        <LoginForm />
       </Provider>
     );
   }
