@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import ReduxThunk from "redux-thunk";
 import firebase from "firebase";
-
+// NOTE: we are wirring up a middle ware for redux
 //Libraries created
 import reducers from "./reducers";
 import LoginForm from "./components/LoginForm";
@@ -22,9 +22,12 @@ export default class App extends Component {
     firebase.initializeApp(config);
   }
   render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       // NOTE: we should give to the Provider an instance of stores (Redux) to connect with all tags => createStore()
-      <Provider store={createStore(reducers)}>
+      //applaying the Reduxthunk middleware to store
+      //second arg for init state (if we want top pass it)
+      <Provider store={store}>
         <LoginForm />
       </Provider>
     );
