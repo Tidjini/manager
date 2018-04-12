@@ -57,5 +57,5 @@ const loginUserFail = dispatch => {
 const loginUserSucces = (dispatch, user) => {
   dispatch({ type: LOGIN_USER_SUCCESS, payload: user, error: "" });
   //this when scene key operate
-  Actions.employeeList();
+  Actions.main();
 };

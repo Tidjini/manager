@@ -8,12 +8,23 @@ const RouterComponent = () => {
   return (
     <Router>
       <Stack key="root">
-        <Scene key="login" component={LoginForm} title="Please Login" />
-        <Scene
-          key="employeeList"
-          component={EmployeeList}
-          title="Employee List"
-        />
+        <Stack key="auth" hideNavBar>
+          <Scene
+            key="login"
+            hideNavBar={false}
+            component={LoginForm}
+            title="Please Login"
+          />
+        </Stack>
+
+        <Scene key="main" hideNavBar>
+          <Scene
+            hideNavBar={false}
+            key="employeeList"
+            component={EmployeeList}
+            title="Employee List"
+          />
+        </Scene>
       </Stack>
     </Router>
   );
