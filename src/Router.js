@@ -13,7 +13,6 @@ const RouterComponent = () => {
           key="employeeList"
           component={EmployeeList}
           title="Employee List"
-          initial
         />
       </Stack>
     </Router>
