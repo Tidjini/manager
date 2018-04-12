@@ -6,7 +6,7 @@ import firebase from "firebase";
 // NOTE: we are wirring up a middle ware for redux
 //Libraries created
 import reducers from "./reducers";
-import LoginForm from "./components/LoginForm";
+import Router from "./Router";
 
 export default class App extends Component {
   componentWillMount() {
@@ -28,7 +28,7 @@ export default class App extends Component {
       //applaying the Reduxthunk middleware to store
       //second arg for init state (if we want top pass it)
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
