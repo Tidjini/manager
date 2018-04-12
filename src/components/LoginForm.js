@@ -48,13 +48,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          padding: 18
-        }}
-      >
+      <View>
         <Card>
           <CardSection>
             <Input
