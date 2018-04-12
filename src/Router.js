@@ -17,8 +17,10 @@ const RouterComponent = () => {
           />
         </Stack>
 
-        <Scene key="main" hideNavBar>
+        <Scene key="main" hideNavBar initial>
           <Scene
+            onRight={() => {}}
+            rightTitle="Add"
             hideNavBar={false}
             key="employeeList"
             component={EmployeeList}
