@@ -34,7 +34,6 @@ export const loginUser = ({ email, password }) => {
         loginUserSucces(dispatch, user);
       })
       .catch(() => {
-        loginUserFail(dispatch);
         //sign up the user
         firebase
           .auth()
